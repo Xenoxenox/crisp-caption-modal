@@ -53,6 +53,7 @@ LEARN.md
 docs/design-notes.md
 notes/
 start-hymt*.ps1
+modal_spike/
 
 # Local models, runtime payloads, and binaries
 models/**/*.gguf
