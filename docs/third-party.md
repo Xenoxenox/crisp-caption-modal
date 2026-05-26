@@ -12,6 +12,7 @@ The setup and download scripts may download third-party runtime binaries and mod
 - llama.cpp: downloaded by `scripts/download-llama-cpp-windows.bat`.
   - Project: https://github.com/ggml-org/llama.cpp
   - License: MIT, according to the upstream `LICENSE`.
+  - Modal note: `modal_app/app.py` downloads the pinned `b9095` Linux x64 tarball because the upstream `b9095` release does not publish a Linux CUDA binary asset.
 
 ## Model Files
 

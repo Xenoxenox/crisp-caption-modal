@@ -1,6 +1,6 @@
 {
   "name": "Japanese stable example",
-  "description": "Example profile for steadier Japanese live subtitles. Copy this file to profile.ja.json and adjust local model paths.",
+  "description": "Example profile for steadier Japanese live subtitles. Copy this file to profile.ja.json and adjust local model paths. For Modal translation, set translate_url to https://<workspace>--crisp-caption-runtime-translation-service.modal.run/v1/chat/completions and set OPENAI_API_KEY to your Modal secret token.",
   "tags": ["live", "stable", "ja", "example"],
   "host": "127.0.0.1",
   "port": 8765,
