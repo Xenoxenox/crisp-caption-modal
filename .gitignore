@@ -79,3 +79,6 @@ desktop.ini
 
 # Modal secret
 .env
+
+# debug files
+modal_app/e2e_screenshot.png
