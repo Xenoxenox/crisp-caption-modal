@@ -76,3 +76,6 @@ Thumbs.db
 desktop.ini
 .idea/
 .vscode/
+
+# Modal secret
+.env
