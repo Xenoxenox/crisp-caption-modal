@@ -45,6 +45,7 @@ profiles/*.json
 !profiles/*.example.json
 !glossary.example.json
 !translate_prompt.example.txt
+!profiles/profile.ja_CPU.json
 
 # Local planning notes
 TODO.md
