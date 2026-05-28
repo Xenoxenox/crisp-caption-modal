@@ -78,7 +78,7 @@ cold_start=12.056s
 
 ## Phase 1.5 E2E With NHK Live
 
-Status: partial pass. Browser tab capture and Japanese ASR passed after forcing local CrispASR to CPU; Modal translation failed with HTTP 404.
+Status: passed with the AcFun fallback source. Browser tab capture, local Japanese ASR, Modal translation, and bridge UI rendering all worked after forcing local CrispASR to CPU and after the Modal translation app was brought online.
 
 Chrome DevTools MCP was used for the browser portion. Local prerequisites were present for this run:
 
@@ -114,7 +114,7 @@ Network logs showed multiple `googlevideo.com/videoplayback` requests ending wit
 
 The source was then changed to `https://www.acfun.cn/v/ac31211508`. This avoided the YouTube player failure. AcFun loaded and showed playback at about `06:24 / 24:42`.
 
-Chrome DevTools MCP could open the bridge and AcFun tabs, but the native Chrome tab picker still required manual action. After clicking `Tab audio`, the user manually selected and shared the AcFun tab. The bridge UI and logs confirmed browser capture succeeded:
+The full-chain retest was rerun after the Modal translation app was online. Chrome DevTools MCP opened the bridge and AcFun tabs, but the native Chrome tab picker still required manual action. After clicking `Tab audio`, the user manually selected and shared the AcFun tab. The bridge UI and logs confirmed browser capture succeeded:
 
 ```text
 Capture connected: tab audio
@@ -122,34 +122,36 @@ track received kind=audio
 pc connectionState=connected
 ```
 
-With `--gpu-backend cpu`, the previous local crash did not reproduce. During the 30-second observation window, the bridge stayed connected and `CrispASR` stayed `running`. The UI showed `60` partials and `8` finals.
+With `--gpu-backend cpu`, the previous local crash did not reproduce. During the measured 30-second observation window, the UI counters increased from `55` partials / `15` finals / `15` translations / `0` errors to `87` partials / `22` finals / `21` translations / `0` errors. `Capture` stayed `connected`, `CrispASR` stayed `running`, and `Translator` stayed `online` with no translation errors in the bridge logs.
 
-Observed Japanese ASR samples from the UI:
+Observed original + translation samples from the UI:
 
-- `ケーキのイチゴは最初に食べますか?あ、ロボコちゃん、強々でしょ。ロボコちゃんに10回買ったもんね、うい`
-- `ケーキのいちごは最初に食べますか?最後に食べましょうか?`
-- `私もね、98位、はぁ?`
-- `何だお前。`
-- `1回お水飲んでいいですか?`
+- `ケーキ屋さんの横にあるお花屋さんになろうと思う` -> `打算在蛋糕店旁邊開一家花店`
+- `あと、えっと、小さい子供が好きじゃないまともな大人になろうと思うよ` -> `還有，呃，打算成為一個不喜歡小孩子的正經大人`
+- `ウイちゃんの好きな男の子はどんな人かな?` -> `ウイちゃん喜歡的男孩是什麼樣的人呢？`
+- `私昨日パラサイト見に行ったんですよ。` -> `昨天我去了看《Parasite》。`
+- `何言ってもネタバレになるから何も言えないんですけど` -> `什麼話都會被透露內容，所以什麼也說不出口呢`
 
-Translation did not pass. The UI and bridge logs repeatedly reported:
+Additional DOM-observed latency samples were collected for subsequent final rows. The measurement starts when the final row first appears in the browser DOM and stops when the translated target text replaces `Translation pending`:
 
 ```text
-translate HTTP 404: modal-http: invalid function call
-llama-server health check failed: HTTP 404: modal-http: invalid function call
+utt 79  イラストレーターって何ですか? -> 圖像設計師是什麼？  7.84s
+utt 80  イラスト。 -> 插圖。  4.55s
+utt 81  お絵描きする人、ですかね? -> 是會畫圖的人嗎？  5.81s
+utt 82  お絵描きする人って、幼児化するんですか? -> 畫圖的人，需要變成幼兒的樣子嗎？  9.65s
+utt 83  ええ、知らなかった -> 是的，我不知道  6.37s
 ```
 
-Final 30-second observation state:
+Final observation state:
 
 - Capture: `connected`
 - CrispASR: `running`
-- Translator: `error / queue 0`
+- Translator: `online`; queue varied briefly while the video kept producing speech.
 - Japanese partial subtitles: passed.
 - Japanese final subtitles: passed.
-- Chinese translations: failed with Modal HTTP 404.
-- Partial-to-translation latency samples: not measured because no translation completed.
-- Original + translation samples: ASR originals were collected; translations were 404 error messages, not Chinese output.
-- `translation_error` / translation failure messages: present.
+- Chinese translations: passed.
+- `translation_error` / translation failure messages in the 30-second window: none observed. `rg` over `bridge_stdout.log` and `bridge_stderr.log` found no `translation_error`, `translate HTTP`, `invalid function call`, `Traceback`, or `Exception`.
+- A later post-window UI event log line reported `llama-server health check timeout`, but the UI still showed `Translator` as `online / queue 0` and completed translations continued to render.
 - Screenshot: saved to `modal_app/e2e_screenshot.png`.
 
-Phase 1.5 browser capture plus local Japanese ASR is validated with the AcFun fallback source and CPU ASR backend. Full E2E remains blocked on the Modal translation endpoint returning HTTP 404 for both health checks and translation requests.
+Phase 1.5 browser capture, local Japanese ASR, and Modal-backed Chinese translation are validated with the AcFun fallback source and CPU ASR backend. The original NHK/YouTube live source remains unavailable in this Chrome session due the YouTube player errors documented above.
