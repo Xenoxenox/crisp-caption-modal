@@ -33,7 +33,7 @@ class LlamaServerSidecar:
             "-a",
             self.model_alias,
             "-ngl",
-            os.environ.get("LLAMA_N_GPU_LAYERS", "0"),
+            os.environ.get("LLAMA_N_GPU_LAYERS", "999"),
             "-c",
             "8192",
             "-b",

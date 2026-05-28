@@ -15,9 +15,9 @@ CRISPASR_URL = (
 CRISPASR_SHA256 = "76223ab25faaf03be98afd9c934932e29bb527f32642123395435d47e3089228"
 
 LLAMA_CPP_TAG = "b9095"
-LLAMA_CPP_ASSET = "llama-b9095-bin-ubuntu-x64.tar.gz"
+LLAMA_CPP_ASSET = "llama-b9095-bin-ubuntu-vulkan-x64.tar.gz"
 LLAMA_CPP_URL = f"https://github.com/ggml-org/llama.cpp/releases/download/{LLAMA_CPP_TAG}/{LLAMA_CPP_ASSET}"
-LLAMA_CPP_SHA256 = "167e12288da2dc4dcece7327010844edcfb18ee3a76eb45b2e232a04723865e6"
+LLAMA_CPP_SHA256 = "3ccb127c298abb2640911aac3e3d9221f197bbf6b7c1e0fedfb4a4dae1ab640b"
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -28,7 +28,7 @@ secret = modal.Secret.from_name("crisp-caption-token")
 
 image = (
     modal.Image.from_registry("nvidia/cuda:12.6.0-runtime-ubuntu24.04", add_python="3.11")
-    .apt_install("ca-certificates", "curl", "ffmpeg", "libgomp1", "tar")
+    .apt_install("ca-certificates", "curl", "ffmpeg", "libgomp1", "tar", "libvulkan1")
     .run_commands(
         "mkdir -p /opt/crispasr /tmp/crispasr-download",
         f"curl -L --fail --retry 3 {CRISPASR_URL} -o /tmp/crispasr-download/{CRISPASR_ASSET}",
@@ -57,6 +57,7 @@ image = (
         "test -f /opt/llama.cpp/llama-server",
         "chmod +x /opt/llama.cpp/llama-server",
         "LD_LIBRARY_PATH=/opt/llama.cpp /opt/llama.cpp/llama-server --version",
+        "test -f /usr/share/vulkan/icd.d/nvidia_icd.json || echo 'WARN: NVIDIA ICD missing'",
         "rm -rf /tmp/llama-download",
     )
     .pip_install("fastapi==0.115.*", "uvicorn[standard]", "httpx==0.27.*")
