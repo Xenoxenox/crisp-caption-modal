@@ -82,5 +82,7 @@ desktop.ini
 .env
 
 # debug files
+.firecrawl/
+artifacts/screenshots/
 modal_app/e2e_screenshot.png
 output/Phase2_smoke_events.jsonl
