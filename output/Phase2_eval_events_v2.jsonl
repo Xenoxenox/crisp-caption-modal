@@ -1,0 +1,345 @@
+{"type": "health", "translator_status": "checking", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "starting"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 0.75}
+{"type": "silence", "t": 1.5}
+{"type": "silence", "t": 2.25}
+{"type": "silence", "t": 3.0}
+{"type": "silence", "t": 3.75}
+{"type": "silence", "t": 4.5}
+{"type": "transcript", "seq": 1, "kind": "partial", "final": false, "text": "せ", "utterance_id": 1, "t0": 5.04, "t1": 5.25}
+{"type": "transcript", "seq": 2, "kind": "partial", "final": false, "text": "新たに。", "utterance_id": 1, "t0": 5.04, "t1": 6.0}
+{"type": "transcript", "seq": 3, "kind": "final", "final": true, "text": "新たに。", "utterance_id": 1, "t0": 5.04, "t1": 5.48}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 4, "kind": "partial", "final": false, "text": "いでよ。", "utterance_id": 2, "t0": 6.36, "t1": 6.75}
+{"type": "translation", "seq": 3, "text": "新鮮的。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 5, "kind": "partial", "final": false, "text": "いや", "utterance_id": 2, "t0": 6.36, "t1": 7.5}
+{"type": "transcript", "seq": 6, "kind": "final", "final": true, "text": "いや", "utterance_id": 2, "t0": 6.36, "t1": 6.76}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "translation", "seq": 6, "text": "不"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 8.25}
+{"type": "silence", "t": 9.0}
+{"type": "silence", "t": 9.75}
+{"type": "silence", "t": 10.5}
+{"type": "silence", "t": 11.25}
+{"type": "silence", "t": 12.0}
+{"type": "silence", "t": 12.75}
+{"type": "silence", "t": 13.5}
+{"type": "silence", "t": 14.25}
+{"type": "silence", "t": 15.0}
+{"type": "silence", "t": 15.75}
+{"type": "silence", "t": 16.5}
+{"type": "silence", "t": 17.25}
+{"type": "transcript", "seq": 7, "kind": "partial", "final": false, "text": "......", "utterance_id": 3, "t0": 17.5, "t1": 18.0}
+{"type": "transcript", "seq": 8, "kind": "partial", "final": false, "text": "申し訳ありません。", "utterance_id": 3, "t0": 17.5, "t1": 18.75}
+{"type": "transcript", "seq": 9, "kind": "partial", "final": false, "text": "申し訳ありませんご主人。", "utterance_id": 3, "t0": 17.5, "t1": 19.5}
+{"type": "transcript", "seq": 10, "kind": "partial", "final": false, "text": "ご注文申し訳ありませんご主人様。", "utterance_id": 3, "t0": 17.5, "t1": 20.25}
+{"type": "transcript", "seq": 11, "kind": "final", "final": true, "text": "申し訳ありませんご主人様。", "utterance_id": 3, "t0": 17.5, "t1": 19.66}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "translation", "seq": 11, "text": "對不起，主人。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 21.0}
+{"type": "silence", "t": 21.75}
+{"type": "silence", "t": 22.5}
+{"type": "silence", "t": 23.25}
+{"type": "silence", "t": 24.0}
+{"type": "transcript", "seq": 12, "kind": "partial", "final": false, "text": "中継の", "utterance_id": 4, "t0": 24.25, "t1": 24.75}
+{"type": "transcript", "seq": 13, "kind": "partial", "final": false, "text": "休憩のお時間です。", "utterance_id": 4, "t0": 24.25, "t1": 25.5}
+{"type": "transcript", "seq": 14, "kind": "final", "final": true, "text": "休憩のお時間です。", "utterance_id": 4, "t0": 24.25, "t1": 25.12}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 26.25}
+{"type": "silence", "t": 27.0}
+{"type": "translation", "seq": 14, "text": "是休息時間。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 27.75}
+{"type": "silence", "t": 28.5}
+{"type": "silence", "t": 29.25}
+{"type": "silence", "t": 30.0}
+{"type": "silence", "t": 30.75}
+{"type": "silence", "t": 31.5}
+{"type": "silence", "t": 32.25}
+{"type": "transcript", "seq": 15, "kind": "partial", "final": false, "text": "さて。", "utterance_id": 5, "t0": 32.27, "t1": 33.0}
+{"type": "transcript", "seq": 16, "kind": "partial", "final": false, "text": "......", "utterance_id": 5, "t0": 32.27, "t1": 33.75}
+{"type": "transcript", "seq": 17, "kind": "final", "final": true, "text": "......", "utterance_id": 5, "t0": 32.27, "t1": 33.02}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "translation", "seq": 17, "text": "......"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 34.5}
+{"type": "silence", "t": 35.25}
+{"type": "silence", "t": 36.0}
+{"type": "silence", "t": 36.75}
+{"type": "silence", "t": 37.5}
+{"type": "silence", "t": 38.25}
+{"type": "silence", "t": 39.0}
+{"type": "silence", "t": 39.75}
+{"type": "silence", "t": 40.5}
+{"type": "transcript", "seq": 18, "kind": "partial", "final": false, "text": "甘利君。", "utterance_id": 6, "t0": 40.53, "t1": 41.25}
+{"type": "transcript", "seq": 19, "kind": "partial", "final": false, "text": "あまり根を詰め過ぎても", "utterance_id": 6, "t0": 40.53, "t1": 42.0}
+{"type": "transcript", "seq": 20, "kind": "partial", "final": false, "text": "あまり根を詰め過ぎてもいけませんから。", "utterance_id": 6, "t0": 40.53, "t1": 42.75}
+{"type": "transcript", "seq": 21, "kind": "final", "final": true, "text": "あまり根を詰め過ぎてもいけませんから。", "utterance_id": 6, "t0": 40.53, "t1": 42.77}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 22, "kind": "partial", "final": false, "text": "こうちゃうよ", "utterance_id": 7, "t0": 43.81, "t1": 44.25}
+{"type": "transcript", "seq": 23, "kind": "partial", "final": false, "text": "いります", "utterance_id": 7, "t0": 43.81, "t1": 45.0}
+{"type": "transcript", "seq": 24, "kind": "final", "final": true, "text": "いります", "utterance_id": 7, "t0": 43.81, "t1": 44.61}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "translation", "seq": 21, "text": "不可過度為難自己。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "translation", "seq": 24, "text": "需要"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 45.75}
+{"type": "silence", "t": 46.5}
+{"type": "silence", "t": 47.25}
+{"type": "silence", "t": 48.0}
+{"type": "silence", "t": 48.75}
+{"type": "silence", "t": 49.5}
+{"type": "silence", "t": 50.25}
+{"type": "silence", "t": 51.0}
+{"type": "silence", "t": 51.75}
+{"type": "silence", "t": 52.5}
+{"type": "silence", "t": 53.25}
+{"type": "silence", "t": 54.0}
+{"type": "silence", "t": 54.75}
+{"type": "silence", "t": 55.5}
+{"type": "silence", "t": 56.25}
+{"type": "silence", "t": 57.0}
+{"type": "silence", "t": 57.75}
+{"type": "silence", "t": 58.5}
+{"type": "silence", "t": 59.25}
+{"type": "silence", "t": 60.0}
+{"type": "silence", "t": 60.75}
+{"type": "silence", "t": 61.5}
+{"type": "silence", "t": 62.25}
+{"type": "silence", "t": 63.0}
+{"type": "silence", "t": 63.75}
+{"type": "silence", "t": 64.5}
+{"type": "silence", "t": 65.25}
+{"type": "silence", "t": 66.0}
+{"type": "silence", "t": 66.75}
+{"type": "silence", "t": 67.5}
+{"type": "silence", "t": 68.25}
+{"type": "silence", "t": 69.0}
+{"type": "silence", "t": 69.75}
+{"type": "silence", "t": 70.5}
+{"type": "silence", "t": 71.25}
+{"type": "silence", "t": 72.0}
+{"type": "silence", "t": 72.75}
+{"type": "silence", "t": 73.5}
+{"type": "silence", "t": 74.25}
+{"type": "silence", "t": 75.0}
+{"type": "silence", "t": 75.75}
+{"type": "silence", "t": 76.5}
+{"type": "silence", "t": 77.25}
+{"type": "silence", "t": 78.0}
+{"type": "silence", "t": 78.75}
+{"type": "silence", "t": 79.5}
+{"type": "silence", "t": 80.25}
+{"type": "silence", "t": 81.0}
+{"type": "silence", "t": 81.75}
+{"type": "silence", "t": 82.5}
+{"type": "silence", "t": 83.25}
+{"type": "silence", "t": 84.0}
+{"type": "silence", "t": 84.75}
+{"type": "silence", "t": 85.5}
+{"type": "silence", "t": 86.25}
+{"type": "silence", "t": 87.0}
+{"type": "silence", "t": 87.75}
+{"type": "silence", "t": 88.5}
+{"type": "silence", "t": 89.25}
+{"type": "silence", "t": 90.0}
+{"type": "silence", "t": 90.75}
+{"type": "silence", "t": 91.5}
+{"type": "silence", "t": 92.25}
+{"type": "silence", "t": 93.0}
+{"type": "silence", "t": 93.75}
+{"type": "silence", "t": 94.5}
+{"type": "silence", "t": 95.25}
+{"type": "silence", "t": 96.0}
+{"type": "silence", "t": 96.75}
+{"type": "silence", "t": 97.5}
+{"type": "silence", "t": 98.25}
+{"type": "silence", "t": 99.0}
+{"type": "silence", "t": 99.75}
+{"type": "silence", "t": 100.5}
+{"type": "silence", "t": 101.25}
+{"type": "silence", "t": 102.0}
+{"type": "silence", "t": 102.75}
+{"type": "silence", "t": 103.5}
+{"type": "silence", "t": 104.25}
+{"type": "silence", "t": 105.0}
+{"type": "silence", "t": 105.75}
+{"type": "silence", "t": 106.5}
+{"type": "silence", "t": 107.25}
+{"type": "silence", "t": 108.0}
+{"type": "silence", "t": 108.75}
+{"type": "silence", "t": 109.5}
+{"type": "silence", "t": 110.25}
+{"type": "silence", "t": 111.0}
+{"type": "silence", "t": 111.75}
+{"type": "silence", "t": 112.5}
+{"type": "silence", "t": 113.25}
+{"type": "silence", "t": 114.0}
+{"type": "silence", "t": 114.75}
+{"type": "silence", "t": 115.5}
+{"type": "silence", "t": 116.25}
+{"type": "transcript", "seq": 25, "kind": "partial", "final": false, "text": "......", "utterance_id": 8, "t0": 116.77, "t1": 117.0}
+{"type": "transcript", "seq": 26, "kind": "final", "final": true, "text": "......", "utterance_id": 8, "t0": 116.77, "t1": 116.98}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 27, "kind": "partial", "final": false, "text": "少々お待ちくださいませ。", "utterance_id": 9, "t0": 117.0, "t1": 118.5}
+{"type": "translation", "seq": 26, "text": "......"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 28, "kind": "final", "final": true, "text": "少々お待ちくださいませ。", "utterance_id": 9, "t0": 117.0, "t1": 118.48}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 120.0}
+{"type": "translation", "seq": 28, "text": "請稍等一會兒。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 120.75}
+{"type": "silence", "t": 121.5}
+{"type": "silence", "t": 122.25}
+{"type": "silence", "t": 123.0}
+{"type": "silence", "t": 123.75}
+{"type": "silence", "t": 124.5}
+{"type": "silence", "t": 125.25}
+{"type": "silence", "t": 126.0}
+{"type": "silence", "t": 126.75}
+{"type": "transcript", "seq": 29, "kind": "partial", "final": false, "text": "......おちん", "utterance_id": 10, "t0": 127.24, "t1": 127.5}
+{"type": "transcript", "seq": 30, "kind": "partial", "final": false, "text": "私たちと", "utterance_id": 10, "t0": 127.24, "t1": 128.25}
+{"type": "transcript", "seq": 31, "kind": "partial", "final": false, "text": "私たちと。", "utterance_id": 10, "t0": 127.24, "t1": 129.0}
+{"type": "transcript", "seq": 32, "kind": "final", "final": true, "text": "私たちと。", "utterance_id": 10, "t0": 127.24, "t1": 128.23}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 33, "kind": "partial", "final": false, "text": "話。", "utterance_id": 11, "t0": 128.58, "t1": 129.0}
+{"type": "transcript", "seq": 34, "kind": "partial", "final": false, "text": "いかがです?", "utterance_id": 11, "t0": 128.58, "t1": 129.75}
+{"type": "translation", "seq": 32, "text": "與我們一起。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 35, "kind": "partial", "final": false, "text": "いかがですか?", "utterance_id": 11, "t0": 128.58, "t1": 130.5}
+{"type": "transcript", "seq": 36, "kind": "final", "final": true, "text": "いかがですか?", "utterance_id": 11, "t0": 128.58, "t1": 129.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 131.25}
+{"type": "translation", "seq": 36, "text": "怎麼樣？"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 132.0}
+{"type": "silence", "t": 132.75}
+{"type": "silence", "t": 133.5}
+{"type": "silence", "t": 134.25}
+{"type": "silence", "t": 135.0}
+{"type": "transcript", "seq": 37, "kind": "partial", "final": false, "text": "最近はとても......", "utterance_id": 12, "t0": 134.57, "t1": 135.75}
+{"type": "transcript", "seq": 38, "kind": "partial", "final": false, "text": "とても。", "utterance_id": 12, "t0": 134.57, "t1": 136.5}
+{"type": "transcript", "seq": 39, "kind": "final", "final": true, "text": "とても。", "utterance_id": 12, "t0": 134.57, "t1": 135.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 137.25}
+{"type": "translation", "seq": 39, "text": "非常。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 40, "kind": "partial", "final": false, "text": "高くなってまいりました。", "utterance_id": 13, "t0": 136.38, "t1": 138.0}
+{"type": "transcript", "seq": 41, "kind": "partial", "final": false, "text": "気温が高くなってまいりました。", "utterance_id": 13, "t0": 136.38, "t1": 138.75}
+{"type": "transcript", "seq": 42, "kind": "final", "final": true, "text": "気温が高くなってまいりました。", "utterance_id": 13, "t0": 136.38, "t1": 137.98}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 139.5}
+{"type": "silence", "t": 140.25}
+{"type": "silence", "t": 141.0}
+{"type": "translation", "seq": 42, "text": "氣溫變得很高了。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 43, "kind": "partial", "final": false, "text": "......", "utterance_id": 14, "t0": 141.46, "t1": 141.75}
+{"type": "transcript", "seq": 44, "kind": "partial", "final": false, "text": "す。", "utterance_id": 14, "t0": 141.46, "t1": 142.5}
+{"type": "transcript", "seq": 45, "kind": "final", "final": true, "text": "す。", "utterance_id": 14, "t0": 141.46, "t1": 141.99}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 143.25}
+{"type": "translation", "seq": 45, "text": "好的。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 46, "kind": "partial", "final": false, "text": "変わりない?", "utterance_id": 15, "t0": 143.54, "t1": 144.0}
+{"type": "transcript", "seq": 47, "kind": "partial", "final": false, "text": "お過ごしです。", "utterance_id": 15, "t0": 143.54, "t1": 144.75}
+{"type": "transcript", "seq": 48, "kind": "partial", "final": false, "text": "変わりない? 少しでしょ。", "utterance_id": 15, "t0": 143.54, "t1": 145.5}
+{"type": "transcript", "seq": 49, "kind": "final", "final": true, "text": "変わりない? 少しでしょ。", "utterance_id": 15, "t0": 143.54, "t1": 145.11}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 146.25}
+{"type": "silence", "t": 147.0}
+{"type": "translation", "seq": 49, "text": "沒什麼變化嗎？應該有點吧。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 50, "kind": "partial", "final": false, "text": "いる。", "utterance_id": 16, "t0": 147.49, "t1": 147.75}
+{"type": "transcript", "seq": 51, "kind": "partial", "final": false, "text": "気温の変化です。", "utterance_id": 16, "t0": 147.49, "t1": 148.5}
+{"type": "transcript", "seq": 52, "kind": "partial", "final": false, "text": "気温の変化", "utterance_id": 16, "t0": 147.49, "t1": 149.25}
+{"type": "transcript", "seq": 53, "kind": "final", "final": true, "text": "気温の変化", "utterance_id": 16, "t0": 147.49, "t1": 148.48}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 54, "kind": "partial", "final": false, "text": "体調崩し", "utterance_id": 17, "t0": 149.17, "t1": 150.0}
+{"type": "translation", "seq": 53, "text": "氣溫的變化"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 55, "kind": "partial", "final": false, "text": "体調を崩しやすいのね", "utterance_id": 17, "t0": 149.17, "t1": 150.75}
+{"type": "transcript", "seq": 56, "kind": "partial", "final": false, "text": "体調崩しやすいのに。", "utterance_id": 17, "t0": 149.17, "t1": 151.5}
+{"type": "transcript", "seq": 57, "kind": "final", "final": true, "text": "体調崩しやすいのに。", "utterance_id": 17, "t0": 149.17, "t1": 150.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 152.25}
+{"type": "transcript", "seq": 58, "kind": "partial", "final": false, "text": "お気をつけてください。", "utterance_id": 18, "t0": 151.79, "t1": 153.0}
+{"type": "translation", "seq": 57, "text": "明明容易身體不適應啊。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 59, "kind": "final", "final": true, "text": "お気をつけてください。", "utterance_id": 18, "t0": 151.79, "t1": 152.98}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 154.5}
+{"type": "translation", "seq": 59, "text": "請小心行事。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 155.25}
+{"type": "silence", "t": 156.0}
+{"type": "silence", "t": 156.75}
+{"type": "silence", "t": 157.5}
+{"type": "silence", "t": 158.25}
+{"type": "silence", "t": 159.0}
+{"type": "transcript", "seq": 60, "kind": "partial", "final": false, "text": "うん。", "utterance_id": 19, "t0": 159.29, "t1": 159.75}
+{"type": "transcript", "seq": 61, "kind": "final", "final": true, "text": "うん。", "utterance_id": 19, "t0": 159.29, "t1": 159.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 161.25}
+{"type": "translation", "seq": 61, "text": "嗯。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 62, "kind": "partial", "final": false, "text": "申し訳。", "utterance_id": 20, "t0": 161.31, "t1": 162.0}
+{"type": "transcript", "seq": 63, "kind": "partial", "final": false, "text": "申し訳ありませんが。", "utterance_id": 20, "t0": 161.31, "t1": 162.75}
+{"type": "transcript", "seq": 64, "kind": "partial", "final": false, "text": "申し訳ありません", "utterance_id": 20, "t0": 161.31, "t1": 163.5}
+{"type": "transcript", "seq": 65, "kind": "final", "final": true, "text": "申し訳ありません", "utterance_id": 20, "t0": 161.31, "t1": 162.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 164.25}
+{"type": "translation", "seq": 65, "text": "很抱歉"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 165.0}
+{"type": "transcript", "seq": 66, "kind": "partial", "final": false, "text": "そう。", "utterance_id": 21, "t0": 165.19, "t1": 165.75}
+{"type": "transcript", "seq": 67, "kind": "final", "final": true, "text": "そう。", "utterance_id": 21, "t0": 165.19, "t1": 165.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 167.25}
+{"type": "translation", "seq": 67, "text": "對啊。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 68, "kind": "partial", "final": false, "text": "......", "utterance_id": 22, "t0": 167.72, "t1": 168.0}
+{"type": "transcript", "seq": 69, "kind": "partial", "final": false, "text": "あまりにもろく", "utterance_id": 22, "t0": 167.72, "t1": 168.75}
+{"type": "transcript", "seq": 70, "kind": "partial", "final": false, "text": "あまりにも。", "utterance_id": 22, "t0": 167.72, "t1": 169.5}
+{"type": "transcript", "seq": 71, "kind": "final", "final": true, "text": "あまりにも。", "utterance_id": 22, "t0": 167.72, "t1": 168.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 170.25}
+{"type": "translation", "seq": 71, "text": "太過了。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 171.0}
+{"type": "transcript", "seq": 72, "kind": "partial", "final": false, "text": "うん。", "utterance_id": 23, "t0": 171.22, "t1": 171.75}
+{"type": "transcript", "seq": 73, "kind": "final", "final": true, "text": "うん。", "utterance_id": 23, "t0": 171.22, "t1": 171.73}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 74, "kind": "partial", "final": false, "text": "ご覧にな", "utterance_id": 24, "t0": 172.73, "t1": 173.25}
+{"type": "translation", "seq": 73, "text": "嗯。"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "transcript", "seq": 75, "kind": "partial", "final": false, "text": "ご覧になる?", "utterance_id": 24, "t0": 172.73, "t1": 174.0}
+{"type": "transcript", "seq": 76, "kind": "final", "final": true, "text": "ご覧になる?", "utterance_id": 24, "t0": 172.73, "t1": 173.39}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 174.75}
+{"type": "silence", "t": 175.5}
+{"type": "translation", "seq": 76, "text": "要看看嗎？"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 176.25}
+{"type": "silence", "t": 177.0}
+{"type": "transcript", "seq": 77, "kind": "partial", "final": false, "text": "......", "utterance_id": 25, "t0": 176.66, "t1": 177.75}
+{"type": "transcript", "seq": 78, "kind": "final", "final": true, "text": "......", "utterance_id": 25, "t0": 176.66, "t1": 176.93}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 178.5}
+{"type": "translation", "seq": 78, "text": "......"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 179.25}
+{"type": "silence", "t": 180.0}
+{"type": "transcript", "seq": 79, "kind": "partial", "final": false, "text": "私たちも", "utterance_id": 26, "t0": 179.42, "t1": 180.75}
+{"type": "transcript", "seq": 80, "kind": "final", "final": true, "text": "私たちも", "utterance_id": 26, "t0": 179.42, "t1": 180.12}
+{"type": "health", "translator_status": "online", "translation_queue_size": 1, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 181.5}
+{"type": "translation", "seq": 80, "text": "我們也"}
+{"type": "health", "translator_status": "online", "translation_queue_size": 0, "last_error": "", "active_profile": "ja", "crisp_status": "running"}
+{"type": "silence", "t": 182.25}
+{"type": "silence", "t": 183.0}
+{"type": "silence", "t": 183.75}
