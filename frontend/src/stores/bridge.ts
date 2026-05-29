@@ -4,6 +4,7 @@ import type {
   BridgeEvent,
   ConfigProfile,
   DotState,
+  EndpointSettings,
   HealthEvent,
   Stats,
   TranscriptEvent,
@@ -12,6 +13,17 @@ import type {
   TranslationEvent,
   UiSettings,
 } from '@/types';
+
+const ENDPOINT_KEY = 'crisp.endpoint';
+const TOKEN_KEY = 'crisp.token';
+
+function savedEndpoint(): string {
+  return localStorage.getItem(ENDPOINT_KEY) || 'local';
+}
+
+function savedToken(): string {
+  return localStorage.getItem(TOKEN_KEY) || '';
+}
 
 function nowLabel(): string {
   return new Date().toLocaleTimeString([], { hour12: false });
@@ -84,6 +96,8 @@ export const useBridgeStore = defineStore('bridge', {
       autoScroll: true,
       transcriptFontPx: 18,
     } as UiSettings,
+    endpoint: savedEndpoint(),
+    endpointToken: savedToken(),
   }),
   getters: {
     profileDot: (state): DotState => {
@@ -102,6 +116,11 @@ export const useBridgeStore = defineStore('bridge', {
     captureDot: (state): DotState => captureDot(state.wsState, state.rtcState, state.audioState),
     translatorStatusText: (state): string => `${state.translatorState} / queue ${state.queueState}`,
     logText: (state): string => state.logLines.join('\n'),
+    endpointSettings: (state): EndpointSettings => ({
+      endpoint: state.endpoint,
+      token: state.endpointToken,
+    }),
+    usingLocalBridge: (state): boolean => state.endpoint === 'local',
   },
   actions: {
     log(line: string): void {
@@ -193,6 +212,16 @@ export const useBridgeStore = defineStore('bridge', {
         ...this.settings,
         ...settings,
       };
+    },
+    updateEndpointSettings(settings: Partial<EndpointSettings>): void {
+      if (settings.endpoint !== undefined) {
+        this.endpoint = settings.endpoint || 'local';
+        localStorage.setItem(ENDPOINT_KEY, this.endpoint);
+      }
+      if (settings.token !== undefined) {
+        this.endpointToken = settings.token;
+        localStorage.setItem(TOKEN_KEY, settings.token);
+      }
     },
   },
 });

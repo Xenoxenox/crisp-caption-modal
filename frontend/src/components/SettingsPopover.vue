@@ -1,12 +1,17 @@
 <script setup lang="ts">
-import type { UiSettings } from '@/types';
+import type { EndpointSettings, UiSettings } from '@/types';
 
-defineProps<{
+const DEFAULT_MODAL_ENDPOINT =
+  'wss://litardphobia--crisp-caption-runtime-realtime-service.modal.run/v1/realtime';
+
+const props = defineProps<{
   settings: UiSettings;
+  endpointSettings: EndpointSettings;
 }>();
 
 defineEmits<{
   updateSettings: [settings: Partial<UiSettings>];
+  updateEndpointSettings: [settings: Partial<EndpointSettings>];
 }>();
 
 function checkedValue(event: Event): boolean {
@@ -17,6 +22,13 @@ function numberValue(event: Event): number {
   return Number((event.target as HTMLInputElement).value);
 }
 
+function endpointMode(): 'local' | 'modal' {
+  return props.endpointSettings.endpoint === 'local' ? 'local' : 'modal';
+}
+
+function modalEndpoint(): string {
+  return props.endpointSettings.endpoint === 'local' ? '' : props.endpointSettings.endpoint;
+}
 </script>
 
 <template>
@@ -66,6 +78,50 @@ function numberValue(event: Event): number {
           />
           <output>{{ settings.transcriptFontPx }}px</output>
         </div>
+      </label>
+      <label class="field-row">
+        <span>Endpoint</span>
+        <select
+          :value="endpointMode()"
+          @change="
+            $emit('updateEndpointSettings', {
+              endpoint:
+                ($event.target as HTMLSelectElement).value === 'local'
+                  ? 'local'
+                  : modalEndpoint() || DEFAULT_MODAL_ENDPOINT,
+            })
+          "
+        >
+          <option value="local">Local bridge</option>
+          <option value="modal">Modal cloud</option>
+        </select>
+      </label>
+      <label v-if="endpointMode() === 'modal'" class="stack-field">
+        <span>WSS URL</span>
+        <input
+          :value="modalEndpoint()"
+          placeholder="wss://.../v1/realtime"
+          type="url"
+          @input="
+            $emit('updateEndpointSettings', {
+              endpoint: ($event.target as HTMLInputElement).value,
+            })
+          "
+        />
+      </label>
+      <label v-if="endpointMode() === 'modal'" class="stack-field">
+        <span>Token</span>
+        <input
+          :value="endpointSettings.token"
+          autocomplete="off"
+          placeholder="CRISP_API_TOKEN"
+          type="password"
+          @input="
+            $emit('updateEndpointSettings', {
+              token: ($event.target as HTMLInputElement).value,
+            })
+          "
+        />
       </label>
     </div>
   </section>

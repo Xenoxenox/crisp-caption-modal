@@ -1,11 +1,17 @@
 export type DotState = '' | 'ok' | 'warn' | 'bad';
 export type DisplayMode = 'both' | 'translation';
+export type CaptureEndpoint = 'local' | string;
 
 export interface UiSettings {
   showPartials: boolean;
   displayMode: DisplayMode;
   autoScroll: boolean;
   transcriptFontPx: number;
+}
+
+export interface EndpointSettings {
+  endpoint: CaptureEndpoint;
+  token: string;
 }
 
 export interface ConfigProfile {

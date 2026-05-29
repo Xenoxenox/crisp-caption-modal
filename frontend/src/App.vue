@@ -4,8 +4,9 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import { downloadText, vttText } from '@/api/export';
 import { fetchProfiles, selectProfile } from '@/api/profiles';
 import { startSubtitleOverlay } from '@/api/subtitle';
-import { CaptureSession } from '@/api/webrtc';
+import { CaptureSession, type CaptureCallbacks } from '@/api/webrtc';
 import { BridgeSocket } from '@/api/websocket';
+import { WebSocketSession } from '@/api/websocketSession';
 import SettingsPopover from '@/components/SettingsPopover.vue';
 import SidebarPanel from '@/components/SidebarPanel.vue';
 import TranscriptView from '@/components/TranscriptView.vue';
@@ -16,7 +17,20 @@ const settingsOpen = ref(false);
 const profileBusy = ref(false);
 
 let bridgeSocket: BridgeSocket | null = null;
-let captureSession: CaptureSession | null = null;
+let captureSession: CaptureSession | WebSocketSession | null = null;
+
+const captureCallbacks: CaptureCallbacks = {
+  onRtcState: (text, dot) => {
+    bridge.setRtcState(text, dot);
+  },
+  onAudioState: (text, dot) => {
+    bridge.setAudioState(text, dot);
+  },
+  onSessionLabel: (text) => {
+    bridge.setSessionLabel(text);
+  },
+  onLog: bridge.log,
+};
 
 async function startDisplay(): Promise<void> {
   try {
@@ -86,19 +100,48 @@ function exportSelected(): void {
   );
 }
 
-onMounted(() => {
-  captureSession = new CaptureSession({
-    onRtcState: (text, dot) => {
-      bridge.setRtcState(text, dot);
-    },
-    onAudioState: (text, dot) => {
-      bridge.setAudioState(text, dot);
-    },
-    onSessionLabel: (text) => {
-      bridge.setSessionLabel(text);
+function makeBridgeSocket(): BridgeSocket {
+  return new BridgeSocket({
+    onState: (text, dot) => {
+      bridge.setWsState(text, dot);
     },
     onLog: bridge.log,
+    onEvent: bridge.handleBridgeEvent,
+    onBadJson: () => {
+      bridge.incrementError();
+    },
   });
+}
+
+function configureCaptureTransport(): void {
+  captureSession?.stop();
+  if (bridge.usingLocalBridge) {
+    captureSession = new CaptureSession(captureCallbacks);
+    bridgeSocket ??= makeBridgeSocket();
+    bridgeSocket.connect();
+    void loadProfiles();
+    return;
+  }
+
+  bridgeSocket?.close();
+  bridgeSocket = null;
+  bridge.setWsState('cloud endpoint', 'ok');
+  captureSession = new WebSocketSession(bridge.endpoint, bridge.endpointToken, captureCallbacks);
+  bridge.setProfiles([], 'Modal cloud ja', bridge.crispState === 'running' ? 'running' : 'stopped');
+}
+
+function updateEndpointSettings(
+  settings: Parameters<typeof bridge.updateEndpointSettings>[0],
+): void {
+  const previousEndpoint = bridge.endpoint;
+  const previousToken = bridge.endpointToken;
+  bridge.updateEndpointSettings(settings);
+  if (previousEndpoint !== bridge.endpoint || previousToken !== bridge.endpointToken) {
+    configureCaptureTransport();
+  }
+}
+
+onMounted(() => {
   bridgeSocket = new BridgeSocket({
     onState: (text, dot) => {
       bridge.setWsState(text, dot);
@@ -109,8 +152,7 @@ onMounted(() => {
       bridge.incrementError();
     },
   });
-  bridgeSocket.connect();
-  void loadProfiles();
+  configureCaptureTransport();
 });
 
 onUnmounted(() => {
@@ -147,7 +189,7 @@ onUnmounted(() => {
           <select
             class="profile-select"
             :value="bridge.activeProfile"
-            :disabled="profileBusy"
+            :disabled="profileBusy || !bridge.usingLocalBridge"
             title="Config profile"
             @change="changeProfile"
           >
@@ -178,7 +220,9 @@ onUnmounted(() => {
             <SettingsPopover
               v-if="settingsOpen"
               :settings="bridge.settings"
+              :endpoint-settings="bridge.endpointSettings"
               @update-settings="bridge.updateSettings"
+              @update-endpoint-settings="updateEndpointSettings"
             />
           </div>
         </div>

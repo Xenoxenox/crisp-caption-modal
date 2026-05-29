@@ -57,7 +57,8 @@ defineEmits<{
           <StatusDot :state="crispDot" /><span>CrispASR</span><strong>{{ crispState }}</strong>
         </div>
         <div class="status-item">
-          <StatusDot :state="profileDot" /><span>Profile</span><strong>{{ activeProfile || 'none' }}</strong>
+          <StatusDot :state="profileDot" /><span>Profile</span
+          ><strong>{{ activeProfile || 'none' }}</strong>
         </div>
         <div class="status-item">
           <StatusDot :state="translatorDot" /><span>Translator</span

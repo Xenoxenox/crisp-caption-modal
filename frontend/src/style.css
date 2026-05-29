@@ -258,11 +258,15 @@ button:disabled {
 }
 
 select,
-input[type='range'] {
+input[type='range'],
+input[type='url'],
+input[type='password'] {
   min-width: 0;
 }
 
-select {
+select,
+input[type='url'],
+input[type='password'] {
   background: var(--panel-2);
   border: 1px solid var(--line);
   border-radius: 7px;
@@ -270,6 +274,13 @@ select {
   font: inherit;
   min-height: 34px;
   padding: 0 8px;
+}
+
+.stack-field {
+  color: var(--muted);
+  display: grid;
+  font-size: 13px;
+  gap: 6px;
 }
 
 .stat {
