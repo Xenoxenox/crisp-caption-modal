@@ -96,6 +96,22 @@ def translation_service():
     gpu="L4",
     volumes={"/models": models_volume},
     secrets=[secret],
+    scaledown_window=1800,
+    timeout=3600,
+)
+@modal.concurrent(max_inputs=1)
+@modal.asgi_app()
+def realtime_service():
+    from modal_app.realtime_service import create_app
+
+    return create_app()
+
+
+@app.function(
+    image=image,
+    gpu="L4",
+    volumes={"/models": models_volume},
+    secrets=[secret],
     timeout=7200,
 )
 def transcribe_file(
