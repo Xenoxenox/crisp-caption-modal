@@ -83,3 +83,4 @@ desktop.ini
 
 # debug files
 modal_app/e2e_screenshot.png
+output/Phase2_smoke_events.jsonl
