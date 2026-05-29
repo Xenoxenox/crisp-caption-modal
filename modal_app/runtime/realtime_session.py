@@ -88,7 +88,7 @@ class RealtimeSession:
 
         self.crispasr_proc: subprocess.Popen[bytes] | None = None
         self.stdout_thread: threading.Thread | None = None
-        self.translator_task: asyncio.Task[None] | None = None
+        self.translator_tasks: list[asyncio.Task[None]] = []
         self.watch_task: asyncio.Task[None] | None = None
         self.transcript_seq = 0
 
@@ -126,7 +126,10 @@ class RealtimeSession:
             daemon=True,
         )
         self.stdout_thread.start()
-        self.translator_task = asyncio.create_task(self._translator_worker(), name="realtime-translator")
+        self.translator_tasks = [
+            asyncio.create_task(self._translator_worker(worker_id=index), name=f"realtime-translator-{index}")
+            for index in range(4)
+        ]
         self.watch_task = asyncio.create_task(self._watch_crispasr(), name="realtime-crispasr-watch")
 
         await self._send_health(crisp_status="starting", translator_status="checking")
@@ -144,12 +147,14 @@ class RealtimeSession:
             return
         self._stopping = True
 
-        tasks = [task for task in (self.translator_task, self.watch_task) if task is not None]
+        tasks: list[asyncio.Task[None]] = [*self.translator_tasks]
+        if self.watch_task is not None:
+            tasks.append(self.watch_task)
         for task in tasks:
             task.cancel()
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
-        self.translator_task = None
+        self.translator_tasks = []
         self.watch_task = None
 
         proc = self.crispasr_proc
@@ -250,7 +255,7 @@ class RealtimeSession:
             self.transcript_queue.put_nowait((seq, text))
             self._queue_health()
 
-    async def _translator_worker(self) -> None:
+    async def _translator_worker(self, *, worker_id: int) -> None:
         headers = {"Content-Type": "application/json"}
         async with httpx.AsyncClient(timeout=60.0) as client:
             while True:
@@ -292,7 +297,7 @@ class RealtimeSession:
                     except asyncio.CancelledError:
                         raise
                     except Exception as exc:  # noqa: BLE001
-                        message = f"translate request failed: {exc}"
+                        message = f"translate worker {worker_id} request failed: {exc}"
                         logger.warning("%s", message)
                         self.outbound_queue.put_nowait({"type": "translation_error", "seq": seq, "message": message})
                         await self._send_health(translator_status="error", last_error=message)
